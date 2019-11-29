@@ -1,0 +1,14 @@
+<h1>User Details</h1>
+<div *ngIf="phone">
+  <h2>{{phone.id}}</h2>
+  <h3>{{phone.name}}</h3>
+  <h4>{{phone.OS}}</h4>
+  <h4>{{phone.CPU_TYPE}}</h4>
+  <h4>{{phone.camera}}</h4>
+  <h4>{{phone.screen}}</h4>
+  <h4>{{phone.memory}}</h4>
+</div>
+<div *ngIf="!phone">
+  <h2>SmartPhone not found</h2>
+</div>
+<button routerLink="/smartPhones">Back</button>

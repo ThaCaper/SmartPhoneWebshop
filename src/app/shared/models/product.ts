@@ -1,7 +1,5 @@
-import {OrderLine} from './orderline';
-
 export class Product {
+  id: number;
   name: string;
   price: number;
-  orderLine: OrderLine;
 }

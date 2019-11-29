@@ -1,4 +1,3 @@
-import {Address} from './address';
 import {Order} from './order';
 
 export class User {
@@ -7,8 +6,10 @@ export class User {
   password?: string;
   firstName: string;
   lastName: string;
-  address: Address;
   email: string;
   phoneNumber: string;
+  street: string;
+  zipCode: string;
+  country: string;
   orders?: Order[];
 }

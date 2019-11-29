@@ -1,0 +1,47 @@
+<p>smartPhone works</p>
+<div class="container"
+     fxLayout="column"
+     fxFill
+     fxLayoutGap="15px">
+  <div fxLayout="row">
+    <button mat-raised-button color="primary" routerLink="/smartPhones-add">+</button>
+
+  </div>
+  <h4 *ngIf="loading"
+      fxFill
+      fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </h4>
+  <div fxLayout="row wrap"
+       fxLayoutAlign="start start"
+       *ngIf="smart && !loading">
+    <div fxFlex="33"
+         *ngFor="let smartPhone of smart">
+      <mat-card>
+        <mat-card-content>
+          <div>{{smartPhone.product.name}}</div>
+          <p>Volume: {{smartPhone.id}}</p>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutGap="5px">
+          <span fxFlex></span>
+          <button routerLink="/coffeeCups/{{smartPhone.id}}"
+                  mat-mini-fab
+                  color="accent">
+            <i class="fas fa-info"></i>
+          </button>
+          <button routerLink="/coffeeCup-update/{{smartPhone.id}}"
+                  mat-mini-fab
+                  color="primary">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <button (click)="delete(smartPhone.id)"
+                  mat-mini-fab
+                  color="accent">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

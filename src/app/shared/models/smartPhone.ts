@@ -1,8 +1,6 @@
 import {Product} from './product';
 
-export class SmartPhone {
-id: number;
-product: Product;
+export class SmartPhone extends Product{
 OS: string;
 CPU_TYPE: string;
 camera: string;
