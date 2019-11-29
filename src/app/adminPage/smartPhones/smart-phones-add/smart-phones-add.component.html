@@ -16,19 +16,19 @@
           <input matInput placeholder="OS" formControlName="os">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="CPU_Type" formControlName="CPU_TYPE">
+          <input matInput placeholder="CPU Type" formControlName="cpu">
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Camera" formControlName="camera">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Memory" formControlName="memory">
+          <input type="number" matInput placeholder="Memory" formControlName="memory">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Screen size" formControlName="screen">
+          <input type="number" matInput placeholder="Screen size" formControlName="screen">
         </mat-form-field>
       </form>
-      <button type="submit" mat-fab color="primary" fxFlexAlign="center right">Save</button>
+      <button type="submit" mat-fab color="primary" fxFlexAlign="center right" (click)="save()">Save</button>
       <button type="cancel" mat-fab color="primary" fxFlexAlign="center right" routerLink="/smartPhones">Cancel</button>
     </mat-card>
   </div>

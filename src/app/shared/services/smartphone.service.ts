@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {SmartPhone} from '../models/smartPhone';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SmartphoneService {
-sp: SmartPhone[];
-apiUrl = 'http://smartphoneshop.azurewebsites.net/api/smartPhones';
+apiUrl = environment.apiUrl + '/smartPhones';
   constructor(private http: HttpClient) { }
 
   addSmartPhone(smart: SmartPhone): Observable<SmartPhone> {

@@ -13,7 +13,10 @@ loading: boolean;
   constructor(private smartPhoneService: SmartphoneService) { }
 
   ngOnInit() {
-    this.refresh();
+    this.smartPhoneService.getSmartPhones()
+      .subscribe(phones => {
+        this.smart = phones;
+      });
   }
 
   refresh() {

@@ -1,8 +1,8 @@
 import {Product} from './product';
 
 export class SmartPhone extends Product{
-OS: string;
-CPU_TYPE: string;
+os: string;
+cpuType: string;
 camera: string;
 memory: number;
 screen: number;

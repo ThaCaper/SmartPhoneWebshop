@@ -14,7 +14,7 @@ export class SmartPhonesUpdateComponent implements OnInit {
   smartPhoneForm = new FormGroup({
     name: new FormControl(''),
     os: new FormControl(''),
-    CPU_TYPE: new FormControl(''),
+    cpu: new FormControl(''),
     camera: new FormControl(''),
     memory: new FormControl(''),
     screen: new FormControl('')
@@ -29,8 +29,8 @@ export class SmartPhonesUpdateComponent implements OnInit {
       .subscribe(smartPhoneFromRest => {
         this.smartPhoneForm.patchValue({
           name: smartPhoneFromRest.name,
-          os: smartPhoneFromRest.OS,
-          CPU_TYPE: smartPhoneFromRest.CPU_TYPE,
+          os: smartPhoneFromRest.os,
+          cpu: smartPhoneFromRest.cpuType,
           camera: smartPhoneFromRest.camera,
           memory: smartPhoneFromRest.memory,
           screen: smartPhoneFromRest.screen

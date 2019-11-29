@@ -31,6 +31,7 @@ import {
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,9 @@
-<p>smartPhone works</p>
 <div class="container"
      fxLayout="column"
      fxFill
      fxLayoutGap="15px">
   <div fxLayout="row">
-    <button mat-raised-button color="primary" routerLink="/smartPhones-add">+</button>
+    <button mat-raised-button color="accent" routerLink="/smartPhones-add">+</button>
 
   </div>
   <h4 *ngIf="loading"
@@ -19,25 +18,25 @@
          *ngFor="let smartPhone of smart">
       <mat-card>
         <mat-card-content>
-          <div>{{smartPhone.product.name}}</div>
-          <p>Volume: {{smartPhone.id}}</p>
+          <div>{{smartPhone.name}}</div>
+          <p>ID: {{smartPhone.id}}</p>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutGap="5px">
           <span fxFlex></span>
-          <button routerLink="/coffeeCups/{{smartPhone.id}}"
+          <button routerLink="/smartPhones/{{smartPhone.id}}"
                   mat-mini-fab
                   color="accent">
-            <i class="fas fa-info"></i>
+            <i class="fas fa-info">Detail</i>
           </button>
-          <button routerLink="/coffeeCup-update/{{smartPhone.id}}"
+          <button routerLink="/smartPhones-update/{{smartPhone.id}}"
                   mat-mini-fab
                   color="primary">
-            <i class="fas fa-pencil-alt"></i>
+            <i class="fas fa-pencil-alt">Update</i>
           </button>
           <button (click)="delete(smartPhone.id)"
                   mat-mini-fab
                   color="accent">
-            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-trash-alt">Delete</i>
           </button>
         </mat-card-actions>
       </mat-card>
