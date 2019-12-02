@@ -8,6 +8,10 @@ import {SmartPhonesUpdateComponent} from './adminPage/smartPhones/smart-phones-u
 import {SmartPhonesDetailsComponent} from './adminPage/smartPhones/smart-phones-details/smart-phones-details.component';
 import {SmartPhonesListComponent} from './adminPage/smartPhones/smart-phones-list/smart-phones-list.component';
 import {SmartPhonesAddComponent} from './adminPage/smartPhones/smart-phones-add/smart-phones-add.component';
+import {CoversListComponent} from './adminPage/covers/covers-list/covers-list.component';
+import {CoversDetailsComponent} from './adminPage/covers/covers-details/covers-details.component';
+import {CoversUpdateComponent} from './adminPage/covers/covers-update/covers-update.component';
+import {CoversAddComponent} from './adminPage/covers/covers-add/covers-add.component';
 
 
 const routes: Routes = [
@@ -19,6 +23,10 @@ const routes: Routes = [
   { path: 'smartPhones/:id', component: SmartPhonesDetailsComponent},
   { path: 'smartPhones', component: SmartPhonesListComponent},
   { path: 'smartPhones-add', component: SmartPhonesAddComponent},
+  { path: 'covers', component: CoversListComponent},
+  { path: 'covers/:id', component: CoversDetailsComponent},
+  { path: 'cover-update/id', component: CoversUpdateComponent},
+  { path: 'cover-add', component: CoversAddComponent}
 ];
 
 @NgModule({

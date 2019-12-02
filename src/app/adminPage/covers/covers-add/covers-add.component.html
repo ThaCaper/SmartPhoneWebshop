@@ -1,1 +1,38 @@
-<p>covers-add works!</p>
+<div fxLayout="column"
+     fxFill
+     fxlayoutgap="10px">
+  <div fxLayout="row" fxLayoutAlign="center top">
+    <mat-card-header>
+      <h1>Add new Cover!</h1>
+    </mat-card-header>
+    <mat-card fxflex="33">
+      <form [formGroup]="coverForm" (ngSubmit)="save()">
+        <div fxLayout="column">
+          <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Type of Brand" formControlName="brand">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Type of Model" formControlName="model">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Color" formControlName="color">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Material" formControlName="mats">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Price" formControlName="price">
+          </mat-form-field>
+        </div>
+      </form>
+      <mat-button-toggle type="submit" (click)="save()">Save</mat-button-toggle >
+      <mat-button-toggle routerLink="/smartPhones">Cancel</mat-button-toggle >
+    </mat-card>
+  </div>
+  <div fxLayout="row">
+    <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
+  </div>
+</div>

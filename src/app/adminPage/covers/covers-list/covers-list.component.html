@@ -1,1 +1,36 @@
-<p>covers-list works!</p>
+<div class="container"
+     fxLayout="column"
+     fxFill
+     fxLayoutGap="15px">
+  <div fxLayout="row">
+    <mat-button-toggle routerLink="/cover-add">+</mat-button-toggle>
+  </div>
+  <h4 *ngIf="loading"
+      fxFill
+      fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </h4>
+  <div fxLayout="row wrap"
+       fxLayoutAlign="start start"
+       *ngIf="covers && !loading">
+    <div fxFlex="33"
+         *ngFor="let cover of covers">
+      <mat-card>
+        <mat-card-content>
+          <div>{{cover.name}}</div>
+          <p>ID: {{cover.id}}</p>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutGap="5px">
+          <span fxFlex></span>
+          <mat-button-toggle-group>
+            <mat-button-toggle routerLink="/covers/{{cover.id}}">Details</mat-button-toggle>
+            <mat-button-toggle routerLink="/cover-update/{{cover.id}}">Update</mat-button-toggle>
+            <mat-button-toggle (click)="delete(cover.id)">Delete</mat-button-toggle>
+          </mat-button-toggle-group>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+

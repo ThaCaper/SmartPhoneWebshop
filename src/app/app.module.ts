@@ -22,11 +22,11 @@ import { SmartPhonesListComponent } from './adminPage/smartPhones/smart-phones-l
 import { SmartPhonesDetailsComponent } from './adminPage/smartPhones/smart-phones-details/smart-phones-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
+  MatButtonModule, MatButtonToggleModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatProgressSpinnerModule,
+  MatProgressSpinnerModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -68,6 +68,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatInputModule,
     HttpClientModule,
+    MatButtonToggleModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

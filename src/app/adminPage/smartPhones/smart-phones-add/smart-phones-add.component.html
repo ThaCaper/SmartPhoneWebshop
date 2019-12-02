@@ -1,35 +1,40 @@
 <div fxLayout="column"
      fxFill
-     fxLayout="10px">
-  <div fxLayout="row">
-    <button mat-mini-fab color="primary" routerLink="/smartPhones"><--</button>
-  </div>
+     fxlayoutgap="10px">
   <div fxLayout="row" fxLayoutAlign="center top">
-    <mat-card fxFlex="50">
+    <mat-card-header>
+      <h1>Add new SmartPhone!</h1>
+    </mat-card-header>
+    <mat-card fxflex="33">
       <form [formGroup]="smartPhoneForm" (ngSubmit)="save()">
-        <mat-form-field>
-          <label>
+        <div fxLayout="column">
+          <mat-form-field>
+            <label>
             <input matInput placeholder="Name" formControlName="name">
-          </label>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="OS" formControlName="os">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="CPU Type" formControlName="cpu">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Camera" formControlName="camera">
-        </mat-form-field>
-        <mat-form-field>
-          <input type="number" matInput placeholder="Memory" formControlName="memory">
-        </mat-form-field>
-        <mat-form-field>
-          <input type="number" matInput placeholder="Screen size" formControlName="screen">
-        </mat-form-field>
+            </label>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="OS" formControlName="os">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="CPU Type" formControlName="cpu">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Camera" formControlName="camera">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Memory" formControlName="memory">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Screen size" formControlName="screen">
+          </mat-form-field>
+        </div>
       </form>
-      <button type="submit" mat-fab color="primary" fxFlexAlign="center right" (click)="save()">Save</button>
-      <button type="cancel" mat-fab color="primary" fxFlexAlign="center right" routerLink="/smartPhones">Cancel</button>
+      <mat-button-toggle type="submit" (click)="save()">Save</mat-button-toggle >
+      <mat-button-toggle routerLink="/smartPhones">Cancel</mat-button-toggle >
     </mat-card>
+  </div>
+  <div fxLayout="row">
+    <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
   </div>
 </div>
