@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://smartphoneshop.azurewebsites.net/api'
+  apiUrl: 'https://smartphoneshop.azurewebsites.net/api' // HAS TO BE HTTPS
 };
 
 /*
