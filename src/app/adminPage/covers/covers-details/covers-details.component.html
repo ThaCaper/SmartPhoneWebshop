@@ -1,1 +1,22 @@
-<p>covers-details works!</p>
+<div *ngIf="cover">
+  <mat-card-header>
+    <h1>{{cover.name}}</h1>
+  </mat-card-header>
+  <mat-card class="mat-card">
+    <mat-card-content>
+      <h4>Id: {{cover.id}}</h4>
+      <h4>Brand: {{cover.typeOfBrand}}</h4>
+      <h4>Model: {{cover.typeOfModel}}</h4>
+      <h4>Material: {{cover.material}}</h4>
+      <h4>Color: {{cover.color}}</h4>
+      <h4>Price: {{cover.price}}dkk</h4>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="!cover">
+  <h2>SmartPhone not found</h2>
+</div>
+<div fxLayout="row">
+  <mat-button-toggle routerLink="/covers"><--</mat-button-toggle>
+</div>

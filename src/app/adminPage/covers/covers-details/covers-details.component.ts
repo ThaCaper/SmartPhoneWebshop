@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Cover} from '../../../shared/models/cover';
+import {ActivatedRoute, Route} from '@angular/router';
+import {CoverService} from '../../../shared/services/cover.service';
 
 @Component({
   selector: 'app-covers-details',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./covers-details.component.css']
 })
 export class CoversDetailsComponent implements OnInit {
-
-  constructor() { }
+  cover: Cover;
+  constructor(private route: ActivatedRoute,
+              private coverService: CoverService) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.coverService.getCoverById(id)
+      .subscribe(coverFromRest => {
+        this.cover = coverFromRest;
+      });
   }
 
 }

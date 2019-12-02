@@ -1,14 +1,23 @@
-<h1>User Details</h1>
 <div *ngIf="phone">
-  <h2>Id: {{phone.id}}</h2>
-  <h3>Product Name: {{phone.name}}</h3>
-  <h4>OS: {{phone.os}}</h4>
-  <h4>CPU: {{phone.cpuType}}</h4>
-  <h4>Camera in Pixels: {{phone.camera}}p</h4>
-  <h4>Screen in inch: {{phone.screen}}</h4>
-  <h4>Memory in gb: {{phone.memory}}gb</h4>
+  <mat-card-header>
+    <h1>{{phone.name}}</h1>
+  </mat-card-header>
+  <mat-card>
+    <mat-card-content>
+      <h4>Id: {{phone.id}}</h4>
+      <h4>OS: {{phone.os}}</h4>
+      <h4>CPU: {{phone.cpuType}}</h4>
+      <h4>Camera in Pixels: {{phone.camera}}p</h4>
+      <h4>Screen in inch: {{phone.screen}}</h4>
+      <h4>Memory in gb: {{phone.memory}}gb</h4>
+      <h4>Price: {{phone.price}}dkk</h4>
+    </mat-card-content>
+  </mat-card>
 </div>
+
 <div *ngIf="!phone">
   <h2>SmartPhone not found</h2>
 </div>
-<button mat-mini-fab color="primary" routerLink="/smartPhones">Back</button>
+<div fxLayout="row">
+  <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
+</div>
