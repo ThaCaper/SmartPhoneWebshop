@@ -1,1 +1,14 @@
-<p>users-details works!</p>
+<h1>User Details</h1>
+<div *ngIf="user">
+  <h2>Id: {{user.id}}</h2>
+  <h3> Name: {{user.firstName}} {{user.lastName}}</h3>
+  <h4>Email: {{user.email}}</h4>
+  <h4>Phone number: {{user.phoneNumber}}</h4>
+  <h4>Address: {{user.street}} {{user.zipCode}}</h4>
+
+
+</div>
+<div *ngIf="!user">
+  <h2>user not found</h2>
+</div>
+<button mat-mini-fab color="primary" routerLink="/users">Back</button>

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {SmartPhone} from '../../../shared/models/smartPhone';
+import {FormControl, FormGroup} from '@angular/forms';
+import {SmartphoneService} from '../../../shared/services/smartphone.service';
+import {Router} from '@angular/router';
+import {User} from '../../../shared/models/user';
+import {UserService} from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-users-add',
@@ -7,9 +13,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersAddComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  userForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    street: new FormControl(''),
+    zipCode: new FormControl('')
+  });
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
+  AddUser() {
+    const userToBeAdded = this.userForm.value;
+    this.userService.adduser(userToBeAdded)
+      .subscribe(() => {
+        this.router.navigateByUrl('/users');
+      });
+  }
 }
