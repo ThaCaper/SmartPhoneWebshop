@@ -12,6 +12,8 @@ import {CoversListComponent} from './adminPage/covers/covers-list/covers-list.co
 import {CoversDetailsComponent} from './adminPage/covers/covers-details/covers-details.component';
 import {CoversUpdateComponent} from './adminPage/covers/covers-update/covers-update.component';
 import {CoversAddComponent} from './adminPage/covers/covers-add/covers-add.component';
+import {HomeComponent} from './adminPage/home/home.component';
+import {LoginComponent} from './shared/login/login.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,10 @@ const routes: Routes = [
   { path: 'covers', component: CoversListComponent},
   { path: 'covers/:id', component: CoversDetailsComponent},
   { path: 'cover-update/id', component: CoversUpdateComponent},
-  { path: 'cover-add', component: CoversAddComponent}
+  { path: 'cover-add', component: CoversAddComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent, data: { title: 'login'}},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

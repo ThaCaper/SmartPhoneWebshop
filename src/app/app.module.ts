@@ -32,6 +32,7 @@ import {
 import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './shared/login/login.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     SmartPhonesUpdateComponent,
     SmartPhonesListComponent,
     SmartPhonesDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
