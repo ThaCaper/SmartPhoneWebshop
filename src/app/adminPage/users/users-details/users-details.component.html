@@ -1,14 +1,46 @@
-<h1>User Details</h1>
 <div *ngIf="user">
-  <h2>Id: {{user.id}}</h2>
-  <h3> Name: {{user.firstName}} {{user.lastName}}</h3>
-  <h4>Email: {{user.email}}</h4>
-  <h4>Phone number: {{user.phoneNumber}}</h4>
-  <h4>Address: {{user.street}} {{user.zipCode}}</h4>
-
-
+  <div fxLayout="column"
+       fxFill
+       fxLayout="10px">
+    <mat-card-header>
+      <h1>Details</h1>
+    </mat-card-header>
+    <div fxLayout="row" fxLayoutAlign="center top">
+      <mat-card fxFlex="50">
+        <form [formGroup]="userForm">
+          <mat-form-field>
+            <input matInput placeholder="Id" formControlName="id">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="First Name" formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="Email" placeholder="Email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="phoneNumber" formControlName="phoneNumber">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Street" formControlName="street">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="ZipCode" formControlName="zipCode">
+          </mat-form-field>
+        </form>
+      </mat-card>
+      <div fxLayout="row">
+        <mat-button-toggle routerLink="/users"><--</mat-button-toggle>
+      </div>
+    </div>
+  </div>
 </div>
 <div *ngIf="!user">
   <h2>user not found</h2>
+  <div fxLayout="row">
+    <mat-button-toggle routerLink="/users">Back</mat-button-toggle>
+  </div>
 </div>
-<button mat-mini-fab color="primary" routerLink="/users">Back</button>
+

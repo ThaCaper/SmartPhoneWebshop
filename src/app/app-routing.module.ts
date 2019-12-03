@@ -27,9 +27,8 @@ const routes: Routes = [
   { path: 'smartPhones-add', component: SmartPhonesAddComponent},
   { path: 'covers', component: CoversListComponent},
   { path: 'covers/:id', component: CoversDetailsComponent},
-  { path: 'cover-update/id', component: CoversUpdateComponent},
+  { path: 'cover-update/:id', component: CoversUpdateComponent},
   { path: 'cover-add', component: CoversAddComponent},
-  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent, data: { title: 'login'}},
   {path: '**', redirectTo: ''}
 ];
