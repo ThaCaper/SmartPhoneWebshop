@@ -32,6 +32,7 @@ export class UsersUpdateComponent implements OnInit {
           firstName: userFromRest.firstName,
           lastName: userFromRest.lastName,
           phoneNumber: userFromRest.phoneNumber,
+          email: userFromRest.email,
           street: userFromRest.street,
           zipCode: userFromRest.zipCode,
         });

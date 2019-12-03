@@ -6,7 +6,7 @@
       <h1>Update</h1>
     </mat-card-header>
     <mat-card fxFlex="50">
-      <form [formGroup]="smartPhoneForm" (ngSubmit)="save()">
+      <form [formGroup]="smartPhoneForm" (ngSubmit)="update()">
         <mat-form-field>
           <label>
             <input matInput placeholder="Name" formControlName="name">
@@ -28,12 +28,9 @@
           <input matInput placeholder="Screen size" formControlName="screen">
         </mat-form-field>
       </form>
-      <mat-button-toggle type="submit" fxFlexAlign="center right" (click)="save()">Update</mat-button-toggle>
+      <mat-button-toggle type="submit" fxFlexAlign="center right" (click)="update()">Update</mat-button-toggle>
       <mat-button-toggle type="cancel" fxFlexAlign="center right" routerLink="/smartPhones">Cancel</mat-button-toggle>
     </mat-card>
-    <div fxLayout="row">
-      <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
-    </div>
   </div>
 </div>
 

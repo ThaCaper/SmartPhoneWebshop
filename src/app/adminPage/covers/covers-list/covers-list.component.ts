@@ -14,10 +14,7 @@ export class CoversListComponent implements OnInit {
   constructor(private coverService: CoverService) { }
 
   ngOnInit() {
-    this.coverService.getCovers()
-      .subscribe(cover => {
-        this.covers = cover;
-      });
+    this.refresh();
   }
 
   refresh() {
@@ -25,6 +22,7 @@ export class CoversListComponent implements OnInit {
     this.coverService.getCovers()
       .subscribe(cover => {
       this.covers = cover;
+      this.loading = false;
     });
   }
 
