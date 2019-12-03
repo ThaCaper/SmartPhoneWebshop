@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'cover-update/id', component: CoversUpdateComponent},
   { path: 'cover-add', component: CoversAddComponent},
   { path: 'home', component: HomeComponent},
+  { path: '', component: LoginComponent, data: {title: 'login'}},
   { path: 'login', component: LoginComponent, data: { title: 'login'}},
   {path: '**', redirectTo: ''}
 ];
