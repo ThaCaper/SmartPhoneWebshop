@@ -1,11 +1,8 @@
 .mat-card {
-  max-width: 400px;
+  max-width: 210px;
   margin: 10px 10px 10px 10px;
   background-color: #333333;
   color: aliceblue;
-}
-.space {
-  margin: 10px 10px
 }
 
 .mat-button-toggle {

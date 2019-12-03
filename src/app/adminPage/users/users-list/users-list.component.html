@@ -1,11 +1,9 @@
-<p>users-list works!</p>
 <div class="container"
      fxLayout="column"
      fxFill
      fxLayoutGap="15px">
   <div fxLayout="row">
-    <button mat-raised-button color="accent" class="mat-buttom-wrapper" routerLink="/user-add">+</button>
-
+    <mat-button-toggle routerLink="/user-add">+</mat-button-toggle>
   </div>
   <h4 *ngIf="loading"
       fxFill
@@ -24,25 +22,17 @@
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutGap="5px">
           <span fxFlex></span>
-          <button routerLink="/users/{{user.id}}"
-                  mat-mini-fab
-                  color="accent">
-            <i class="fas fa-info" >Detail</i>
-          </button>
-          <button routerLink="/user-update/{{user.id}}"
-                  mat-mini-fab
-                  color="primary" class="mat-buttom-wrapper">
-            <i class="fas fa-pencil-alt">Update</i>
-          </button>
-          <button (click)="delete(user.id) "
-                  mat-mini-fab
-                  color="accent" class="mat-buttom-wrapper">
-            <i class="fas fa-trash-alt">Delete</i>
-          </button>
+          <mat-button-toggle-group>
+            <mat-button-toggle routerLink="/users/{{user.id}}">Details</mat-button-toggle>
+            <mat-button-toggle routerLink="/user-update/{{user.id}}">Update</mat-button-toggle>
+            <mat-button-toggle (click)="delete(user.id)">Delete</mat-button-toggle>
+          </mat-button-toggle-group>
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
 </div>
+
+
 
 

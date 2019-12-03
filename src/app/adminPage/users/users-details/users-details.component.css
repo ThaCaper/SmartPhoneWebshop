@@ -1,0 +1,12 @@
+.mat-card {
+  max-width: 210px;
+  margin: 10px 10px 10px 10px;
+  background-color: #333333;
+  color: aliceblue;
+}
+
+.mat-button-toggle {
+  max-width: 100px;
+  background-color: #333333;
+  margin: 5px 10px 10px 10px;
+}

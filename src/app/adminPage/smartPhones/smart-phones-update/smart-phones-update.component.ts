@@ -37,7 +37,7 @@ export class SmartPhonesUpdateComponent implements OnInit {
         });
       });
   }
-  updateUser() {
+  update() {
     const smartP = this.smartPhoneForm.value;
     smartP.id = this.id;
     this.smartPhoneService.updateSmartPhone(smartP)
