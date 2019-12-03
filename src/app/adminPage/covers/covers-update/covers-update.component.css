@@ -1,5 +1,5 @@
 .mat-card {
-  max-width: 400px;
+  max-width: 300px;
   margin: 10px 10px 10px 10px;
   background-color: #333333;
   color: aliceblue;
@@ -9,4 +9,8 @@
   max-width: 100px;
   background-color: #333333;
   margin: 5px 10px 10px 10px;
+}
+
+.mat-form-field {
+  margin: 15px;
 }
