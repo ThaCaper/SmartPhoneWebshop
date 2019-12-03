@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Cover} from '../../../shared/models/cover';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CoverService} from '../../../shared/services/cover.service';
 
 @Component({
   selector: 'app-covers-add',
@@ -19,13 +20,13 @@ export class CoversAddComponent implements OnInit {
     price: new FormControl('')
   });
   constructor(private router: Router,
-              private coverService) { }
+              private coverService: CoverService) { }
 
   ngOnInit() {
   }
 
   save() {
-    const coverToAdd = this.coverService.value;
+    const coverToAdd = this.coverForm.value;
     this.coverService.addCover(coverToAdd)
       .subscribe(() => {
         this.router.navigateByUrl('/covers');
