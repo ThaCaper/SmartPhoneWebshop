@@ -2,8 +2,8 @@ import {Order} from './order';
 
 export class User {
   id: number;
-  userName: string;
-  password?: string;
+  Username: string;
+  Password: string;
   firstName: string;
   lastName: string;
   email: string;

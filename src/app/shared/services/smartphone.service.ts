@@ -1,29 +1,50 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {SmartPhone} from '../models/smartPhone';
 import {environment} from '../../../environments/environment';
+import {AuthenticationService} from './authentication.service';
+
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SmartphoneService {
 apiUrl = environment.apiUrl + '/smartPhones';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,  private authencationService: AuthenticationService) { }
 
   addSmartPhone(smart: SmartPhone): Observable<SmartPhone> {
-    return this.http.post<SmartPhone>(this.apiUrl, smart);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
+    return this.http.post<SmartPhone>(this.apiUrl, smart, httpOptions);
   }
   getSmartPhones(): Observable<SmartPhone[]> {
-    return this.http.get<SmartPhone[]>(this.apiUrl);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
+    return this.http.get<SmartPhone[]>(this.apiUrl, httpOptions);
   }
   getSmartPhoneById(id: number): Observable<SmartPhone> {
-    return this.http.get<SmartPhone>(this.apiUrl + '/' + id);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
+    return this.http.get<SmartPhone>(this.apiUrl + '/' + id, httpOptions);
   }
   updateSmartPhone(smart: SmartPhone): Observable<SmartPhone> {
-    return this.http.put<SmartPhone>(this.apiUrl + '/' + smart.id, smart);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
+    return this.http.put<SmartPhone>(this.apiUrl + '/' + smart.id, smart, httpOptions);
   }
   deleteSmartPhone(id: number): Observable<any> {
-    return this.http.delete(this.apiUrl + '/' + id);
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
+    return this.http.delete(this.apiUrl + '/' + id, httpOptions);
   }
 }

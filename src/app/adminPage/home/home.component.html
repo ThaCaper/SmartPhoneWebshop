@@ -5,8 +5,11 @@
     <mat-card-header>
       <h1>Home page</h1>
     </mat-card-header>
-    <mat-card fxflex="33">
-      <span routerLink="/login">login page</span>
+    <mat-card fxflex="33" >
+      <span routerLink="/login">login</span>
+    </mat-card>
+    <mat-card fxflex="33" >
+      <button routerLink="/login" (click)="logout()">logout</button>
     </mat-card>
   </div>
 </div>
