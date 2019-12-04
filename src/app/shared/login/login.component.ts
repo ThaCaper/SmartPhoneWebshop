@@ -13,8 +13,8 @@ import {AuthenticationService} from '../services/authentication.service';
 export class LoginComponent implements OnInit {
 
 
-  LoginForm = new FormGroup({
-    Username: new FormControl(''),
+  loginForm = new FormGroup({
+    username: new FormControl(''),
     password: new FormControl('')
   });
   submitted = false;
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   user: User;
   ngOnInit() {
-    this.LoginForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
@@ -34,20 +34,20 @@ export class LoginComponent implements OnInit {
     this.authentication.Logout();
   }
   get username() {
-    return this.LoginForm.get('username');
+    return this.loginForm.get('username');
   }
   get password() {
-    return this.LoginForm.get('password');
+    return this.loginForm.get('password');
   }
   Login() {
     this.submitted = true;
-    if (this.LoginForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
     this.loading = true;
     this.authentication.login(this.username.value, this.password.value)
       .subscribe(success => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }, error => {
         this.errormsg = error.message;
         this.loading = false;

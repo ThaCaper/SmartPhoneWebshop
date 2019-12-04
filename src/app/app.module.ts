@@ -33,6 +33,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './shared/login/login.component';
+import {AuthGuard} from './shared/guards/auth.guard';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { LoginComponent } from './shared/login/login.component';
     SmartPhonesListComponent,
     SmartPhonesDetailsComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +74,9 @@ import { LoginComponent } from './shared/login/login.component';
     MatButtonToggleModule,
     MatTableModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

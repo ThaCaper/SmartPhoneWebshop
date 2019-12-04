@@ -14,6 +14,7 @@ import {CoversUpdateComponent} from './adminPage/covers/covers-update/covers-upd
 import {CoversAddComponent} from './adminPage/covers/covers-add/covers-add.component';
 import {HomeComponent} from './adminPage/home/home.component';
 import {LoginComponent} from './shared/login/login.component';
+import {AuthGuard} from './shared/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: 'covers/:id', component: CoversDetailsComponent},
   { path: 'cover-update/:id', component: CoversUpdateComponent},
   { path: 'cover-add', component: CoversAddComponent},
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: '', component: LoginComponent, data: {title: 'login'}},
   { path: 'login', component: LoginComponent, data: { title: 'login'}},
   {path: '**', redirectTo: ''}
