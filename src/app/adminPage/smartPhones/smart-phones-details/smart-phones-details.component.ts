@@ -19,7 +19,9 @@ export class SmartPhonesDetailsComponent implements OnInit {
     cpu: new FormControl({value: '', disabled: true}),
     camera: new FormControl({value: '', disabled: true}),
     memory: new FormControl({value: '', disabled: true}),
-    screen: new FormControl({value: '', disabled: true})
+    screen: new FormControl({value: '', disabled: true}),
+    price: new FormControl({value: '', disabled: true}),
+    stock: new FormControl({value: '', disabled: true})
   });
   constructor(private route: ActivatedRoute,
               private phoneService: SmartphoneService) { }
@@ -36,7 +38,9 @@ export class SmartPhonesDetailsComponent implements OnInit {
           cpu: smartPhoneFromRest.cpuType,
           camera: smartPhoneFromRest.camera,
           memory: smartPhoneFromRest.memory,
-          screen: smartPhoneFromRest.screen
+          screen: smartPhoneFromRest.screen,
+          price: smartPhoneFromRest.price,
+          stock: smartPhoneFromRest.stock
         });
       });
   }

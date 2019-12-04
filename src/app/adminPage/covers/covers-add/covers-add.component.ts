@@ -17,7 +17,8 @@ export class CoversAddComponent implements OnInit {
     model: new FormControl(''),
     color: new FormControl(''),
     mats: new FormControl(''),
-    price: new FormControl('')
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private router: Router,
               private coverService: CoverService) { }

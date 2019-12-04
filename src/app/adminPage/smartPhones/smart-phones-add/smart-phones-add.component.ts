@@ -17,7 +17,9 @@ export class SmartPhonesAddComponent implements OnInit {
     cpu: new FormControl(''),
     camera: new FormControl(''),
     memory: new FormControl(''),
-    screen: new FormControl('')
+    screen: new FormControl(''),
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private smartPhoneService: SmartphoneService,
               private router: Router) { }

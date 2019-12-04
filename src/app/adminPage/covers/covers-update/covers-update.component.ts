@@ -17,7 +17,8 @@ export class CoversUpdateComponent implements OnInit {
     model: new FormControl(''),
     color: new FormControl(''),
     mats: new FormControl(''),
-    price: new FormControl('')
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -33,7 +34,8 @@ export class CoversUpdateComponent implements OnInit {
           model: coverFromRest.typeOfModel,
           color: coverFromRest.color,
           mats: coverFromRest.material,
-          price: coverFromRest.price
+          price: coverFromRest.price,
+          stock: coverFromRest.stock
         });
       });
   }
