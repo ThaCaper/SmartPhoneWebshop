@@ -1,51 +1,29 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../models/user';
 import {environment} from '../../../environments/environment';
-import {AuthenticationService} from './authentication.service';
-
-
-
-
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    Authorization: 'my-auth-token'
-  })
-};
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   apiUrl = environment.apiUrl + '/users';
-  constructor(private http: HttpClient, private authencationService: AuthenticationService) { }
+  constructor(private http: HttpClient) { }
+
   adduser(user: User): Observable<User> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
-    return this.http.post<User>(this.apiUrl, user , httpOptions);
+    return this.http.post<User>(this.apiUrl, user);
   }
   getUsers(): Observable<User[]> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
-    return this.http.get<User[]>(this.apiUrl, httpOptions);
-    }
+    return this.http.get<User[]>(this.apiUrl);
+  }
   getUserById(id: number): Observable<User> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
-    return this.http.get<User>(this.apiUrl + '/' + id, httpOptions);
+    return this.http.get<User>(this.apiUrl + '/' + id);
   }
   updateUser(user: User): Observable<User> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
-    return this.http.put<User>(this.apiUrl + '/' + user.id, user, httpOptions);
+    return this.http.put<User>(this.apiUrl + '/' + user.id, user);
   }
   deleteUser(id: number): Observable<any> {
-    httpOptions.headers =
-      httpOptions.headers.set('Authorization', 'Bearer ' + this.authencationService.getToken());
-    return this.http.delete(this.apiUrl + '/' + id, httpOptions);
+    return this.http.delete(this.apiUrl + '/' + id);
   }
 }
