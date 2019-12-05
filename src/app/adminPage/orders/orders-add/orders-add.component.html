@@ -1,1 +1,26 @@
-<p>orders-add works!</p>
+<div fxLayout="column"
+     fxFill
+     fxlayoutgap="10px">
+  <div fxLayout="row" fxLayoutAlign="center top">
+    <mat-card-header>
+      <h1>Add new SmartPhone!</h1>
+    </mat-card-header>
+    <mat-card fxflex="33">
+      <form [formGroup]="orderForm" (ngSubmit)="save()">
+        <div fxLayout="column">
+          <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="OS" formControlName="os">
+          </mat-form-field>
+        </div>
+      </form>
+      <mat-button-toggle type="submit" (click)="save()">Save</mat-button-toggle >
+      <mat-button-toggle routerLink="/smartPhones">Cancel</mat-button-toggle >
+    </mat-card>
+  </div>
+  <div fxLayout="row">
+    <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
+  </div>
+</div>

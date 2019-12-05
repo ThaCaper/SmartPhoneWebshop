@@ -32,6 +32,7 @@ import {
 import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { OrderAddOrderlineComponent } from './adminPage/orders/order-add-orderline/order-add-orderline.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     SmartPhonesUpdateComponent,
     SmartPhonesListComponent,
     SmartPhonesDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    OrderAddOrderlineComponent
   ],
   imports: [
     BrowserModule,

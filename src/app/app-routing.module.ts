@@ -12,6 +12,10 @@ import {CoversListComponent} from './adminPage/covers/covers-list/covers-list.co
 import {CoversDetailsComponent} from './adminPage/covers/covers-details/covers-details.component';
 import {CoversUpdateComponent} from './adminPage/covers/covers-update/covers-update.component';
 import {CoversAddComponent} from './adminPage/covers/covers-add/covers-add.component';
+import {OrdersListComponent} from './adminPage/orders/orders-list/orders-list.component';
+import {OrdersDetailsComponent} from './adminPage/orders/orders-details/orders-details.component';
+import {OrdersUpdateComponent} from './adminPage/orders/orders-update/orders-update.component';
+import {OrdersAddComponent} from './adminPage/orders/orders-add/orders-add.component';
 
 
 const routes: Routes = [
@@ -26,7 +30,11 @@ const routes: Routes = [
   { path: 'covers', component: CoversListComponent},
   { path: 'covers/:id', component: CoversDetailsComponent},
   { path: 'cover-update/:id', component: CoversUpdateComponent},
-  { path: 'cover-add', component: CoversAddComponent}
+  { path: 'cover-add', component: CoversAddComponent},
+  { path: 'orders', component: OrdersListComponent},
+  { path: 'orders/:id', component: OrdersDetailsComponent},
+  { path: 'order-update/:id', component: OrdersUpdateComponent},
+  { path: 'order-add', component: OrdersAddComponent},
 ];
 
 @NgModule({
