@@ -15,12 +15,16 @@ export class UsersAddComponent implements OnInit {
 
   user: User;
   userForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    phoneNumber: new FormControl(''),
-    street: new FormControl(''),
-    zipCode: new FormControl('')
+    FirstName: new FormControl(''),
+    LastName: new FormControl(''),
+    Email: new FormControl(''),
+    PhoneNumber: new FormControl(''),
+    Street: new FormControl(''),
+    ZipCode: new FormControl(''),
+    Country: new FormControl(''),
+    Username: new FormControl(''),
+    Password: new FormControl('')
+
   });
   constructor(private userService: UserService,
               private router: Router) { }

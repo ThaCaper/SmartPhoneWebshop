@@ -14,12 +14,12 @@ export class SmartPhonesDetailsComponent implements OnInit {
   id: number;
   smartPhoneForm = new FormGroup({
     id: new FormControl({value: '', disabled: true}),
-    name: new FormControl({value: '', disabled: true}),
-    os: new FormControl({value: '', disabled: true}),
-    cpu: new FormControl({value: '', disabled: true}),
-    camera: new FormControl({value: '', disabled: true}),
-    memory: new FormControl({value: '', disabled: true}),
-    screen: new FormControl({value: '', disabled: true})
+    Name: new FormControl({value: '', disabled: true}),
+    OS: new FormControl({value: '', disabled: true}),
+    CPU: new FormControl({value: '', disabled: true}),
+    Camera: new FormControl({value: '', disabled: true}),
+    Memory: new FormControl({value: '', disabled: true}),
+    Screen: new FormControl({value: '', disabled: true})
   });
   constructor(private route: ActivatedRoute,
               private phoneService: SmartphoneService) { }
@@ -31,12 +31,12 @@ export class SmartPhonesDetailsComponent implements OnInit {
         this.phone = smartPhoneFromRest;
         this.smartPhoneForm.patchValue({
           id: smartPhoneFromRest.id,
-          name: smartPhoneFromRest.name,
-          os: smartPhoneFromRest.os,
-          cpu: smartPhoneFromRest.cpuType,
-          camera: smartPhoneFromRest.camera,
-          memory: smartPhoneFromRest.memory,
-          screen: smartPhoneFromRest.screen
+          Name: smartPhoneFromRest.name,
+          OS: smartPhoneFromRest.os,
+          CPU: smartPhoneFromRest.cputype,
+          Camera: smartPhoneFromRest.camera,
+          Memory: smartPhoneFromRest.memory,
+          Screen: smartPhoneFromRest.screen
         });
       });
   }

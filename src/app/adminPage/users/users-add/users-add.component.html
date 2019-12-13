@@ -5,22 +5,31 @@
     <mat-card fxFlex="50">
       <form [formGroup]="userForm" (ngSubmit)="AddUser()">
         <mat-form-field>
-            <input matInput placeholder="First Name" formControlName="firstName">
+            <input matInput placeholder="First Name" formControlName="FirstName">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Last Name" formControlName="lastName">
+          <input matInput placeholder="Last Name" formControlName="LastName">
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="Email" placeholder="Email" formControlName="email">
+          <input matInput type="Email" placeholder="Email" formControlName="Email">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="phoneNumber" formControlName="phoneNumber">
+          <input matInput placeholder="phoneNumber" formControlName="PhoneNumber">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Street" formControlName="street">
+          <input matInput placeholder="Street" formControlName="Street">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="ZipCode" formControlName="zipCode">
+          <input matInput placeholder="ZipCode" formControlName="ZipCode">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="country" formControlName="Country">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="username" formControlName="Username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="password"  formControlName="Password">
         </mat-form-field>
       </form>
       <mat-button-toggle-group>

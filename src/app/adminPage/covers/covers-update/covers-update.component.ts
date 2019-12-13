@@ -29,10 +29,10 @@ export class CoversUpdateComponent implements OnInit {
       .subscribe(coverFromRest => {
         this.coverForm.patchValue({
           name: coverFromRest.name,
-          brand: coverFromRest.typeOfBrand,
-          model: coverFromRest.typeOfModel,
-          color: coverFromRest.color,
-          mats: coverFromRest.material,
+          TypeOfBrand: coverFromRest.TypeOfBrand,
+          TypeOfModel: coverFromRest.TypeOfModel,
+          Color: coverFromRest.Color,
+          Material: coverFromRest.Material,
           price: coverFromRest.price
         });
       });

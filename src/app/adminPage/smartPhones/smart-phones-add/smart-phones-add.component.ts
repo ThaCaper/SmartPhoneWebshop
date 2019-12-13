@@ -12,12 +12,12 @@ import {Router} from '@angular/router';
 export class SmartPhonesAddComponent implements OnInit {
   smart: SmartPhone;
   smartPhoneForm = new FormGroup({
-    name: new FormControl(''),
-    os: new FormControl(''),
-    cpu: new FormControl(''),
-    camera: new FormControl(''),
-    memory: new FormControl(''),
-    screen: new FormControl('')
+    Name: new FormControl(''),
+    OS: new FormControl(''),
+    CpuType : new FormControl(''),
+    Camera: new FormControl(''),
+    Memory: new FormControl(''),
+    Screen: new FormControl('')
   });
   constructor(private smartPhoneService: SmartphoneService,
               private router: Router) { }

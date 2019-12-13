@@ -1,48 +1,50 @@
+
 <div *ngIf="cover">
-  <div fxLayout="column"
+<div fxLayout="column"
      fxFill
      fxlayoutgap="10px">
-    <div fxLayout="row" fxLayoutAlign="center top">
-      <mat-card-header>
-        <h1>Details</h1>
-      </mat-card-header>
-      <mat-card fxflex="33">
-        <form [formGroup]="coverForm">
-          <div fxLayout="column">
-            <mat-form-field>
-              <input matInput placeholder="Id" formControlName="id">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Name" formControlName="name">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Type of Brand" formControlName="brand">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Type of Model" formControlName="model">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Color" formControlName="color">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Material" formControlName="mats">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Price" formControlName="price">
-            </mat-form-field>
-          </div>
-        </form>
-      </mat-card>
-    </div>
-    <div fxLayout="row">
-    <mat-button-toggle routerLink="/covers"><--</mat-button-toggle>
-    </div>
+  <div fxlayout="row" fxlayoutalign="center top">
+    <mat-card-header>
+      <h1>Details</h1>
+    </mat-card-header>
+    <mat-card fxflex="33">
+      <form [formGroup]="coverForm">
+        <div fxLayout="column">
+          <mat-form-field>
+            <input matInput placeholder="Id" formControlName="id">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Name" formControlName="Name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Type of Brand" formControlName="TypeOfBrand">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Type of Model" formControlName="TypeOfModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Color" formControlName="Color">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Material" formControlName="Material">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" placeholder="Price" formControlName="price">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Stock" formControlName="stock">
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card>
   </div>
-</div>
-<div *ngIf="!cover">
-  <h2>No Cover found</h2>
   <div fxLayout="row">
     <mat-button-toggle routerLink="/covers"><--</mat-button-toggle>
   </div>
 </div>
-
+<div *ngIf="!cover">
+  <h2>No Cover found</h2>
+  <div fxlayout="row">
+    <mat-button-toggle routerLink="/covers"><--</mat-button-toggle>
+  </div>
+</div>
