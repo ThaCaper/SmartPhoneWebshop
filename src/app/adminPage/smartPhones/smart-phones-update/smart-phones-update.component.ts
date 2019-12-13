@@ -29,11 +29,11 @@ export class SmartPhonesUpdateComponent implements OnInit {
       .subscribe(smartPhoneFromRest => {
         this.smartPhoneForm.patchValue({
           name: smartPhoneFromRest.name,
-          OS: smartPhoneFromRest.OS,
-          CpuType: smartPhoneFromRest.CpuType,
-          Camera: smartPhoneFromRest.Camera,
-          Memory: smartPhoneFromRest.Memory,
-          Screen: smartPhoneFromRest.Screen
+          OS: smartPhoneFromRest.os,
+          CpuType: smartPhoneFromRest.cputype,
+          Camera: smartPhoneFromRest.camera,
+          Memory: smartPhoneFromRest.memory,
+          Screen: smartPhoneFromRest.screen
         });
       });
   }
