@@ -16,6 +16,9 @@ import {OrdersListComponent} from './adminPage/orders/orders-list/orders-list.co
 import {OrdersDetailsComponent} from './adminPage/orders/orders-details/orders-details.component';
 import {OrdersUpdateComponent} from './adminPage/orders/orders-update/orders-update.component';
 import {OrdersAddComponent} from './adminPage/orders/orders-add/orders-add.component';
+import {HomeComponent} from './adminPage/home/home.component';
+import {LoginComponent} from './shared/login/login.component';
+import {AuthGuard} from './shared/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -35,6 +38,10 @@ const routes: Routes = [
   { path: 'orders/:id', component: OrdersDetailsComponent},
   { path: 'order-update/:id', component: OrdersUpdateComponent},
   { path: 'order-add', component: OrdersAddComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: '', component: LoginComponent, data: {title: 'login'}},
+  { path: 'login', component: LoginComponent, data: { title: 'login'}},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

@@ -33,6 +33,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { OrderAddOrderlineComponent } from './adminPage/orders/order-add-orderline/order-add-orderline.component';
+import { LoginComponent } from './shared/login/login.component';
+import {AuthGuard} from './shared/guards/auth.guard';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import { OrderAddOrderlineComponent } from './adminPage/orders/order-add-orderli
     SmartPhonesListComponent,
     SmartPhonesDetailsComponent,
     NavbarComponent,
-    OrderAddOrderlineComponent
+    OrderAddOrderlineComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,9 @@ import { OrderAddOrderlineComponent } from './adminPage/orders/order-add-orderli
     MatButtonToggleModule,
     MatTableModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

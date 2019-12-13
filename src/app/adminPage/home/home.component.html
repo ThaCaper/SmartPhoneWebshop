@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div fxLayout="column"
+     fxFill
+     fxlayoutgap="10px">
+  <div fxLayout="row" fxLayoutAlign="center top">
+    <mat-card-header>
+      <h1>Home page</h1>
+    </mat-card-header>
+
+    <mat-card fxflex="33" >
+      <span routerLink="/home">login</span>
+    </mat-card>
+    <mat-card fxflex="33" >
+      <span routerLink="/login" (click)="logout()">logout</span>
+    </mat-card>
+  </div>
+</div>
