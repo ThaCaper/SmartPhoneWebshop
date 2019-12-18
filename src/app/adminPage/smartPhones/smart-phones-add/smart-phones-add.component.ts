@@ -14,7 +14,7 @@ export class SmartPhonesAddComponent implements OnInit {
   smartPhoneForm = new FormGroup({
     name: new FormControl(''),
     os: new FormControl(''),
-    cpu: new FormControl(''),
+    cpuType: new FormControl(''),
     camera: new FormControl(''),
     memory: new FormControl(''),
     screen: new FormControl(''),

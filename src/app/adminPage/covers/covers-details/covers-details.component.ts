@@ -15,11 +15,12 @@ export class CoversDetailsComponent implements OnInit {
   coverForm = new FormGroup({
     id: new FormControl({value: '', disabled: true}),
     name: new FormControl({value: '', disabled: true}),
-    brand: new FormControl({value: '', disabled: true}),
-    model: new FormControl({value: '', disabled: true}),
+    typeOfBrand: new FormControl({value: '', disabled: true}),
+    typeOfModel: new FormControl({value: '', disabled: true}),
     color: new FormControl({value: '', disabled: true}),
-    mats: new FormControl({value: '', disabled: true}),
-    price: new FormControl({value: '', disabled: true})
+    material: new FormControl({value: '', disabled: true}),
+    price: new FormControl({value: '', disabled: true}),
+    stock: new FormControl({value: '', disabled: true})
   });
   constructor(private route: ActivatedRoute,
               private coverService: CoverService) { }
@@ -32,10 +33,10 @@ export class CoversDetailsComponent implements OnInit {
         this.coverForm.patchValue({
           id: coverFromRest.id,
           name: coverFromRest.name,
-          brand: coverFromRest.typeOfBrand,
-          model: coverFromRest.typeOfModel,
+          typeOfBrand: coverFromRest.typeOfBrand,
+          typeOfModel: coverFromRest.typeOfModel,
           color: coverFromRest.color,
-          mats: coverFromRest.material,
+          material: coverFromRest.material,
           price: coverFromRest.price
         });
       });
