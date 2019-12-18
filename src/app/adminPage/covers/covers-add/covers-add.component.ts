@@ -13,10 +13,10 @@ export class CoversAddComponent implements OnInit {
   cover: Cover;
   coverForm = new FormGroup({
     name: new FormControl(''),
-    brand: new FormControl(''),
-    model: new FormControl(''),
+    typeOfBrand: new FormControl(''),
+    typeOfModel: new FormControl(''),
     color: new FormControl(''),
-    mats: new FormControl(''),
+    material: new FormControl(''),
     price: new FormControl(''),
     stock: new FormControl('')
   });
