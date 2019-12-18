@@ -17,7 +17,8 @@ export class CoversUpdateComponent implements OnInit {
     model: new FormControl(''),
     color: new FormControl(''),
     mats: new FormControl(''),
-    price: new FormControl('')
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -29,11 +30,12 @@ export class CoversUpdateComponent implements OnInit {
       .subscribe(coverFromRest => {
         this.coverForm.patchValue({
           name: coverFromRest.name,
-          TypeOfBrand: coverFromRest.typeOfBrand,
-          TypeOfModel: coverFromRest.typeOfModel,
-          Color: coverFromRest.color,
-          Material: coverFromRest.material,
-          price: coverFromRest.price
+          brand: coverFromRest.typeOfBrand,
+          model: coverFromRest.typeOfModel,
+          color: coverFromRest.color,
+          mats: coverFromRest.material,
+          price: coverFromRest.price,
+          stock: coverFromRest.stock
         });
       });
   }

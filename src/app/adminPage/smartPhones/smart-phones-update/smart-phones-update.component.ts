@@ -17,7 +17,9 @@ export class SmartPhonesUpdateComponent implements OnInit {
     cpu: new FormControl(''),
     camera: new FormControl(''),
     memory: new FormControl(''),
-    screen: new FormControl('')
+    screen: new FormControl(''),
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -29,11 +31,13 @@ export class SmartPhonesUpdateComponent implements OnInit {
       .subscribe(smartPhoneFromRest => {
         this.smartPhoneForm.patchValue({
           name: smartPhoneFromRest.name,
-          OS: smartPhoneFromRest.os,
-          CpuType: smartPhoneFromRest.cputype,
-          Camera: smartPhoneFromRest.camera,
-          Memory: smartPhoneFromRest.memory,
-          Screen: smartPhoneFromRest.screen
+          os: smartPhoneFromRest.os,
+          cpu: smartPhoneFromRest.cpuType,
+          camera: smartPhoneFromRest.camera,
+          memory: smartPhoneFromRest.memory,
+          screen: smartPhoneFromRest.screen,
+          price: smartPhoneFromRest.price,
+          stock: smartPhoneFromRest.stock
         });
       });
   }

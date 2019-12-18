@@ -9,9 +9,7 @@
       <form [formGroup]="smartPhoneForm" (ngSubmit)="save()">
         <div fxLayout="column">
           <mat-form-field>
-            <label>
-            <input matInput placeholder="Name" formControlName="Name">
-            </label>
+            <input matInput placeholder="Name" formControlName="name">
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="OS" formControlName="OS">
@@ -28,13 +26,16 @@
           <mat-form-field>
             <input type="number" matInput placeholder="Screen size" formControlName="Screen">
           </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Price" formControlName="price">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Stock" formControlName="stock">
+          </mat-form-field>
         </div>
       </form>
       <mat-button-toggle type="submit" (click)="save()">Save</mat-button-toggle >
       <mat-button-toggle routerLink="/smartPhones">Cancel</mat-button-toggle >
     </mat-card>
-  </div>
-  <div fxLayout="row">
-    <mat-button-toggle routerLink="/smartPhones"><--</mat-button-toggle>
   </div>
 </div>

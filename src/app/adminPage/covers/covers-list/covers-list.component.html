@@ -8,7 +8,6 @@
   <h4 *ngIf="loading"
       fxFill
       fxLayoutAlign="center center">
-    <mat-spinner></mat-spinner>
   </h4>
   <div fxLayout="row wrap"
        fxLayoutAlign="start start"
@@ -19,6 +18,7 @@
         <mat-card-content>
           <div>{{cover.name}}</div>
           <p>ID: {{cover.id}}</p>
+          <p>Stock: {{cover.stock}}</p>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutGap="5px">
           <span fxFlex></span>

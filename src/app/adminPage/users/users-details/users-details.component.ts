@@ -19,7 +19,8 @@ export class UsersDetailsComponent implements OnInit {
     email: new FormControl({value: '', disabled: true}),
     phoneNumber: new FormControl({value: '', disabled: true}),
     street: new FormControl({value: '', disabled: true}),
-    zipCode: new FormControl({value: '', disabled: true})
+    zipCode: new FormControl({value: '', disabled: true}),
+    password: new FormControl('')
   });
   constructor(private route: ActivatedRoute,
               private userService: UserService) { }

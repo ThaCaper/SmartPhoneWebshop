@@ -12,12 +12,13 @@ import {CoverService} from '../../../shared/services/cover.service';
 export class CoversAddComponent implements OnInit {
   cover: Cover;
   coverForm = new FormGroup({
-    Name: new FormControl(''),
-    TypeOfBrand: new FormControl(''),
-    TypeOfModel: new FormControl(''),
-    Color: new FormControl(''),
-    Material: new FormControl(''),
-    Price: new FormControl('')
+    name: new FormControl(''),
+    brand: new FormControl(''),
+    model: new FormControl(''),
+    color: new FormControl(''),
+    mats: new FormControl(''),
+    price: new FormControl(''),
+    stock: new FormControl('')
   });
   constructor(private router: Router,
               private coverService: CoverService) { }
